@@ -25,7 +25,6 @@ public class CitizenController {
 	@RequestMapping(method = RequestMethod.GET, path = "/test")
 	public ResponseEntity<String> test() {
 		return new ResponseEntity<String>("Hello", HttpStatus.OK);
-
 	}
 
 	@RequestMapping(method = RequestMethod.GET, path = "/id/{id}")
@@ -33,7 +32,6 @@ public class CitizenController {
 
 		List<Citizen> listCitizen = repo.findByVaccinationCenterId(id);
 		return new ResponseEntity<>(listCitizen, HttpStatus.OK);
-
 	}
 	
 	@PostMapping(path = "/add")
