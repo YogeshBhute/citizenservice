@@ -29,17 +29,14 @@ public class CitizenController {
 
 	@RequestMapping(method = RequestMethod.GET, path = "/id/{id}")
 	public ResponseEntity<List<Citizen>> getById(@PathVariable("id") Integer id) {
-
 		List<Citizen> listCitizen = repo.findByVaccinationCenterId(id);
 		return new ResponseEntity<>(listCitizen, HttpStatus.OK);
 	}
 	
 	@PostMapping(path = "/add")
 	public ResponseEntity<Citizen> addCitizen(@RequestBody Citizen newCitizen) {
-
 		Citizen citizen = repo.save(newCitizen);
 		return new ResponseEntity<>(citizen, HttpStatus.OK);
-
 	}
 
 }
